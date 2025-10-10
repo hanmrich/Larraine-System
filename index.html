@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab Exit Feedback</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Lab Exit Feedback</h1>
+    <form id="feedback-form">
+      <label for="rating">How was your experience today?</label>
+      <select id="rating" name="rating" required>
+        <option value="">Select</option>
+        <option value="5">Excellent ⭐⭐⭐⭐⭐</option>
+        <option value="4">Good ⭐⭐⭐⭐</option>
+        <option value="3">Okay ⭐⭐⭐</option>
+        <option value="2">Poor ⭐⭐</option>
+        <option value="1">Terrible ⭐</option>
+      </select>
+
+      <label for="comments">Any comments?</label>
+      <textarea id="comments" name="comments" placeholder="(optional)"></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <p id="message"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
