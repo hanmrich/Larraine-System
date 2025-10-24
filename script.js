@@ -6,11 +6,14 @@ document.getElementById('feedback-form').addEventListener('submit', async (event
   
   const data = { rating, comments };
 
-  const url = 'https://script.google.com/macros/s/AKfycbw3CHEBUHlVETJjr872aWbqVAeXWki5XcKMbKjiJqhHOGGBuCowypGulpRw2GBvbyzt/exec';
+  const url = 'https://script.google.com/macros/s/AKfycbx5k27NC_pJvbhQwnPI1_u9HkLVHpyDKpTmo_M8r6p6rpbWtrC8xm4VIh5UL2Ny6s8Y/exec';
   
   try {
     const response = await fetch(url, {
       method: 'POST',
+      headers:{
+        'Content-Type': 'application/json',
+      },
       body: JSON.stringify(data)
     });
     
