@@ -5,9 +5,8 @@ document.getElementById('feedback-form').addEventListener('submit', async (event
   const comments = document.getElementById('comments').value;
   
   const data = { rating, comments };
-  
-  // 🚨 Replace this with your own Google Apps Script URL when you set it up
-  const url = 'https://script.google.com/macros/s/AKfycbxAmiVfqm_0LlEES-dvGY29abnlVHL3l1cnALGrbCgO85d2xHSWz4OkKbUGycF335zY/exec';
+
+  const url = 'https://script.google.com/macros/s/AKfycbwOgvWyPcY4L2PaBZ5cSDMxlCix6w3Y2Vwfl7z5aV4/dev';
   
   try {
     const response = await fetch(url, {
