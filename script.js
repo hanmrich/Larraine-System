@@ -6,7 +6,7 @@ document.getElementById('feedback-form').addEventListener('submit', async (event
   
   const data = { rating, comments };
 
-  const url = 'https://script.google.com/macros/s/AKfycbwOgvWyPcY4L2PaBZ5cSDMxlCix6w3Y2Vwfl7z5aV4/dev';
+  const url = 'https://script.google.com/macros/library/d/1VZ5kAMp1FayjCsV8gVMcmXOdc6TFZH1SxkvHxAxFX1BMs0AXASX8y7j3/2';
   
   try {
     const response = await fetch(url, {
