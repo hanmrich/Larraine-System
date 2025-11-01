@@ -1,5 +1,5 @@
   <script>
-    const feedbackURL = 'https://script.google.com/macros/s/AKfycbxAmiVfqm_0LlEES-dvGY29abnlVHL3l1cnALGrbCgO85d2xHSWz4OkKbUGycF335zY/exec';
+    const feedbackURL = 'https://script.google.com/macros/s/AKfycbxOzvuL-AiPA9CIj85VDojkWW_1q2ZJOk7yxghA8Ki-KcNw0JZCJ4vnwkBdEIdUGYhS/exec';
     const partsURL = feedbackURL; // You can change this if you want separate destinations
 
     document.getElementById('feedback-form').addEventListener('submit', async (event) => {
