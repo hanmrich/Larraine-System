@@ -1,5 +1,5 @@
   <script>
-    const feedbackURL = 'https://script.google.com/macros/s/AKfycbxOzvuL-AiPA9CIj85VDojkWW_1q2ZJOk7yxghA8Ki-KcNw0JZCJ4vnwkBdEIdUGYhS/exec';
+    const feedbackURL = 'https://script.google.com/macros/s/AKfycbziWUGUlGL9ATws8P5barI2JvIrQnB7XYaWYS3GdPcS89ws1OCXe1L_5sVOfVvVXojE/exec';
     const partsURL = feedbackURL; 
 
     document.getElementById('feedback-form').addEventListener('submit', async (event) => {
