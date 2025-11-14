@@ -1,6 +1,6 @@
   <script>
     const feedbackURL = 'https://script.google.com/macros/s/AKfycbxOzvuL-AiPA9CIj85VDojkWW_1q2ZJOk7yxghA8Ki-KcNw0JZCJ4vnwkBdEIdUGYhS/exec';
-    const partsURL = feedbackURL; // You can change this if you want separate destinations
+    const partsURL = feedbackURL; 
 
     document.getElementById('feedback-form').addEventListener('submit', async (event) => {
       event.preventDefault();
@@ -12,6 +12,7 @@
       try {
         const response = await fetch(feedbackURL, {
           method: 'POST',
+          headers: {"Content-Type": "application/json"},
           body: JSON.stringify(data)
         });
 
@@ -39,6 +40,7 @@
       try {
         const response = await fetch(partsURL, {
           method: 'POST',
+          headers: { "Content-Type" : "applications/json" }
           body: JSON.stringify(data)
         });
 
