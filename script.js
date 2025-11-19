@@ -13,7 +13,6 @@ document.getElementById('feedback-form').addEventListener('submit', async (event
   try {
     const response = await fetch(feedbackURL, {
       method: 'POST',
-      mode: 'no-cors',
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify(data)
     });
@@ -43,7 +42,6 @@ document.getElementById('part-form').addEventListener('submit', async (event) =>
   try {
     const response = await fetch(partsURL, {
       method: 'POST',
-      mode: 'no-cors',
       headers: { "Content-Type" : "application/json" },
       body: JSON.stringify(data)
     });
