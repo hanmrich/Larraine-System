@@ -10,43 +10,34 @@
   <div class="container">
     <h1>Lab Exit Feedback</h1>
     <form id="feedback-form">
-      <label for="rating">How was your experience today?</label>
-      <select id="rating" name="rating" required>
-        <option value="">Select</option>
-        <option value="5">Excellent ⭐⭐⭐⭐⭐</option>
-        <option value="4">Good ⭐⭐⭐⭐</option>
-        <option value="3">Okay ⭐⭐⭐</option>
-        <option value="2">Poor ⭐⭐</option>
-        <option value="1">Terrible ⭐</option>
-      </select>
-
+      <label>How was your experience today?</label>
+      <div class="star-rating">
+        <span class="star" data-value="1">⭐</span>
+        <span class="star" data-value="2">⭐</span>
+        <span class="star" data-value="3">⭐</span>
+        <span class="star" data-value="4">⭐</span>
+        <span class="star" data-value="5">⭐</span>
+      </div>
+      <input type="hidden" id="rating" name="rating" required>
+      <p id="rating-text"></p>
       <label for="comments">Any comments?</label>
       <textarea id="comments" name="comments" placeholder="(optional)"></textarea>
-
       <button type="submit">Submit Feedback</button>
     </form>
-
     <p id="message"></p>
-
     <hr>
-
     <h2>Request Parts</h2>
     <form id="part-form">
       <label for="name">Your Name:</label>
       <input type="text" id="name" name="name" placeholder="Enter your name" required>
-
       <label for="part">Part Name or Description:</label>
       <input type="text" id="part" name="part" placeholder="e.g., 10kΩ resistor, jumper wires" required>
-
       <label for="quantity">Quantity Needed:</label>
       <input type="number" id="quantity" name="quantity" min="1" placeholder="Enter quantity" required>
-
       <label for="reason">Reason or Project:</label>
-      <textarea id="reason" name="reason" placeholder="Briefly describe what it’s for"></textarea>
-
+      <textarea id="reason" name="reason" placeholder="Briefly describe what it's for"></textarea>
       <button type="submit">Submit Part Request</button>
     </form>
-
     <p id="part-message"></p>
   </div>
   <script src="script.js"></script>
