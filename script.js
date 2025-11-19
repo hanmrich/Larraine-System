@@ -1,4 +1,4 @@
-const feedbackURL = 'https://script.google.com/macros/s/AKfycbziWUGUlGL9ATws8P5barI2JvIrQnB7XYaWYS3GdPcS89ws1OCXe1L_5sVOfVvVXojE/exec';
+const feedbackURL = 'https://script.google.com/macros/s/AKfycbzIUr3R7TMxNMClcD2zCd1_u5C212crd-1lpCVgmw26imKVnEQK-pku5reqDHPU4rtr/exec';
 const partsURL = feedbackURL; 
 
 // Star rating functionality
