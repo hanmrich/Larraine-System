@@ -1,67 +1,87 @@
 body {
-      font-family: Arial, sans-serif;
-      background-color: #eef3ff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
-      margin: 0;
-    }
-
-    .container {
-      background: white;
-      padding: 3rem;
-      border-radius: 1.5rem;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
-      width: 90%;
-      max-width: 600px;
-    }
-
-    h1, h2 {
-      text-align: center;
-      color: #003366;
-    }
-
-    label {
-      display: block;
-      margin-top: 1.2rem;
-      font-weight: bold;
-      font-size: 1.1rem;
-    }
-
-    select, textarea, input, button {
-      width: 100%;
-      padding: 0.75rem;
-      margin-top: 0.5rem;
-      border-radius: 0.5rem;
-      border: 1px solid #ccc;
-      font-size: 1rem;
-    }
-
-    button {
-      background-color: #0066ff;
-      color: white;
-      border: none;
-      cursor: pointer;
-      margin-top: 1.5rem;
-      font-size: 1.1rem;
-      transition: background-color 0.2s ease;
-    }
-
-    button:hover {
-      background-color: #0052cc;
-    }
-
-    #message, #part-message {
-      text-align: center;
-      color: green;
-      margin-top: 1rem;
-      font-weight: bold;
-    }
-
-    hr {
-      margin: 2rem 0;
-      border: 0;
-      height: 1px;
-      background: #ddd;
-    }
+  font-family: Arial, sans-serif;
+  background-color: #eef3ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+}
+.container {
+  background: white;
+  padding: 3rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  width: 90%;
+  max-width: 600px;
+}
+h1, h2 {
+  text-align: center;
+  color: #003366;
+}
+label {
+  display: block;
+  margin-top: 1.2rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+.star-rating {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1rem 0;
+  font-size: 3rem;
+}
+.star {
+  cursor: pointer;
+  transition: transform 0.2s, filter 0.2s;
+  filter: grayscale(100%);
+  opacity: 0.4;
+}
+.star:hover {
+  transform: scale(1.2);
+}
+.star.active {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+#rating-text {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #0066ff;
+  min-height: 1.5rem;
+  margin: 0.5rem 0;
+}
+select, textarea, input, button {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+button {
+  background-color: #0066ff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+  transition: background-color 0.2s ease;
+}
+button:hover {
+  background-color: #0052cc;
+}
+#message, #part-message {
+  text-align: center;
+  color: green;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+hr {
+  margin: 2rem 0;
+  border: 0;
+  height: 1px;
+  background: #ddd;
+}
