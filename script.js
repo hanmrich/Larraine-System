@@ -7,56 +7,42 @@ const ratingInput = document.getElementById('rating');
 const ratingText = document.getElementById('rating-text');
 
 const ratingLabels = {
-  1: 'Terrible',
-  2: 'Poor',
-  3: 'Okay',
-  4: 'Good',
-  5: 'Excellent'
+  1: 'Terrible ⭐',
+  2: 'Poor ⭐⭐',
+  3: 'Okay ⭐⭐⭐',
+  4: 'Good ⭐⭐⭐⭐',
+  5: 'Excellent ⭐⭐⭐⭐⭐'
 };
 
-stars.forEach(star => {
+let selectedRating = 0;
+
+stars.forEach((star, index) => {
   star.addEventListener('click', () => {
-    const value = star.getAttribute('data-value');
-    ratingInput.value = value;
-    ratingText.textContent = ratingLabels[value];
-    
-    // Update star display
-    stars.forEach(s => {
-      if (s.getAttribute('data-value') <= value) {
-        s.classList.add('active');
-      } else {
-        s.classList.remove('active');
-      }
-    });
+    selectedRating = index + 1;
+    ratingInput.value = selectedRating;
+    ratingText.textContent = ratingLabels[selectedRating];
+    updateStars(selectedRating);
   });
   
-  // Hover effect
   star.addEventListener('mouseenter', () => {
-    const value = star.getAttribute('data-value');
-    stars.forEach(s => {
-      if (s.getAttribute('data-value') <= value) {
-        s.style.transform = 'scale(1.2)';
-        s.style.filter = 'grayscale(0%)';
-        s.style.opacity = '1';
-      }
-    });
-  });
-  
-  star.addEventListener('mouseleave', () => {
-    stars.forEach(s => {
-      s.style.transform = '';
-      // Restore to selected state or default
-      const selectedValue = ratingInput.value;
-      if (selectedValue && s.getAttribute('data-value') <= selectedValue) {
-        s.style.filter = 'grayscale(0%)';
-        s.style.opacity = '1';
-      } else {
-        s.style.filter = 'grayscale(100%)';
-        s.style.opacity = '0.4';
-      }
-    });
+    updateStars(index + 1);
   });
 });
+
+// Reset to selected rating when mouse leaves the star container
+document.querySelector('.star-rating').addEventListener('mouseleave', () => {
+  updateStars(selectedRating);
+});
+
+function updateStars(rating) {
+  stars.forEach((star, index) => {
+    if (index < rating) {
+      star.classList.add('selected');
+    } else {
+      star.classList.remove('selected');
+    }
+  });
+}
 
 document.getElementById('feedback-form').addEventListener('submit', async (event) => {
   event.preventDefault();
@@ -89,7 +75,8 @@ document.getElementById('feedback-form').addEventListener('submit', async (event
       document.getElementById('message').style.color = "green";
       event.target.reset();
       // Reset stars
-      stars.forEach(s => s.classList.remove('active'));
+      selectedRating = 0;
+      updateStars(0);
       ratingText.textContent = '';
       ratingInput.value = '';
     } else {
