@@ -1,7 +1,7 @@
 const feedbackURL = 'https://script.google.com/macros/s/AKfycbzIUr3R7TMxNMClcD2zCd1_u5C212crd-1lpCVgmw26imKVnEQK-pku5reqDHPU4rtr/exec';
 const partsURL = feedbackURL; 
 
-// Star rating functionality
+//Star rating functionality
 const stars = document.querySelectorAll('.star');
 const ratingInput = document.getElementById('rating');
 const ratingText = document.getElementById('rating-text');
@@ -29,7 +29,7 @@ stars.forEach((star, index) => {
   });
 });
 
-// Reset to selected rating when mouse leaves the star container
+//Reset to selected rating when mouse leaves the star container
 document.querySelector('.star-rating').addEventListener('mouseleave', () => {
   updateStars(selectedRating);
 });
@@ -49,7 +49,7 @@ document.getElementById('feedback-form').addEventListener('submit', async (event
   const rating = document.getElementById('rating').value;
   
   if (!rating) {
-    document.getElementById('message').textContent = "⚠️ Please select a rating";
+    document.getElementById('message').textContent = "Please select a rating";
     document.getElementById('message').style.color = "red";
     return;
   }
@@ -58,7 +58,7 @@ document.getElementById('feedback-form').addEventListener('submit', async (event
   const data = { type: 'feedback', rating, comments };
   
   console.log('Sending feedback:', data);
-  document.getElementById('message').textContent = "⏳ Submitting...";
+  document.getElementById('message').textContent = "Submitting...";
   document.getElementById('message').style.color = "#0066ff";
   
   try {
@@ -67,10 +67,8 @@ document.getElementById('feedback-form').addEventListener('submit', async (event
       method: 'POST',
       body: JSON.stringify(data)
     });
-    
-    // Since the data is being saved successfully, we'll just assume success
-    // Google Apps Script sometimes returns HTML redirects instead of JSON
-    document.getElementById('message').textContent = "✅ Feedback submitted!";
+  
+    document.getElementById('message').textContent = "Feedback submitted!";
     document.getElementById('message').style.color = "green";
     event.target.reset();
     // Reset stars
@@ -83,7 +81,7 @@ document.getElementById('feedback-form').addEventListener('submit', async (event
     console.error('Error:', error);
     // Even if there's a "network error", the data might still be saved
     // So we show a success message with a note
-    document.getElementById('message').textContent = "✅ Feedback likely submitted! (Check your sheet to confirm)";
+    document.getElementById('message').textContent = "Feedback likely submitted! (Check your sheet to confirm)";
     document.getElementById('message').style.color = "green";
     event.target.reset();
     selectedRating = 0;
@@ -102,7 +100,7 @@ document.getElementById('part-form').addEventListener('submit', async (event) =>
   const data = { type: 'part_request', name, part, quantity, reason };
   
   console.log('Sending part request:', data);
-  document.getElementById('part-message').textContent = "⏳ Submitting...";
+  document.getElementById('part-message').textContent = "Submitting...";
   document.getElementById('part-message').style.color = "#0066ff";
   
   try {
@@ -112,15 +110,14 @@ document.getElementById('part-form').addEventListener('submit', async (event) =>
       body: JSON.stringify(data)
     });
     
-    // Since the data is being saved successfully, we'll just assume success
-    document.getElementById('part-message').textContent = "✅ Part request submitted!";
+    
+    document.getElementById('part-message').textContent = "Part request submitted!";
     document.getElementById('part-message').style.color = "green";
     event.target.reset();
     
   } catch (error) {
     console.error('Error:', error);
-    // Even if there's a "network error", the data might still be saved
-    document.getElementById('part-message').textContent = "✅ Part request likely submitted! (Check your sheet to confirm)";
+    document.getElementById('part-message').textContent = "Part request likely submitted!";
     document.getElementById('part-message').style.color = "green";
     event.target.reset();
   }
